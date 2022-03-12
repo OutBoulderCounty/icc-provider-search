@@ -1,0 +1,2150 @@
+[
+  {
+    "_sid": "field.custom.users.users__id",
+    "label": "ID",
+    "api_name": "users__id",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": true,
+      "simpleconn_field": "id"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.users.users__name",
+    "label": "Name",
+    "api_name": "users__name",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": true,
+    "options": {},
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": false,
+      "simpleconn_field": "name"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.users.users__email",
+    "label": "Email",
+    "api_name": "users__email",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": false,
+      "simpleconn_field": "email"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.users.users__avatar",
+    "label": "Avatar",
+    "api_name": "users__avatar",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "image",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": false,
+      "simpleconn_field": "avatar"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.users.users__role",
+    "label": "Role",
+    "api_name": "users__role",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Staff",
+          "value": "staff"
+        },
+        {
+          "label": "Provider",
+          "value": "user"
+        },
+        {
+          "label": "Admin",
+          "value": "internal_admin"
+        }
+      ]
+    },
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": false,
+      "simpleconn_field": "role"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.users.users__type",
+    "label": "Type",
+    "api_name": "users__type",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Workspace User",
+          "value": "user"
+        },
+        {
+          "label": "Customer",
+          "value": "customer"
+        },
+        {
+          "label": "Guest",
+          "value": "guest"
+        }
+      ]
+    },
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": false,
+      "simpleconn_field": "type"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.users.users__from_list",
+    "label": "From List",
+    "api_name": "users__from_list",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": true,
+      "simpleconn_field": "source_list"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.users.users__registered_date",
+    "label": "Registered Date",
+    "api_name": "users__registered_date",
+    "object_id": "object.custom.users",
+    "feature_id": "feature.custom.users",
+    "_object_id": "field",
+    "type": "datetime",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {
+      "read_only": true,
+      "is_disabled": false,
+      "simpleconn_field": "registered_date"
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__name",
+    "label": "Name",
+    "api_name": "providers__name",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": true,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__status",
+    "label": "Status",
+    "api_name": "providers__status",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "✅ Approved",
+          "value": "✅ Approved"
+        },
+        {
+          "label": "🔍 Pending Review",
+          "value": "🔍 Pending Review"
+        },
+        {
+          "label": "🚫 Inactive",
+          "value": "🚫 Inactive"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__email",
+    "label": "Email",
+    "api_name": "providers__email",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__dgform",
+    "label": "DGform",
+    "api_name": "providers__dgform",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {
+      "internal_type": "formula",
+      "formula_parsed": {
+        "value": "https://outbountysandbox.stackerhq.com/outbountytest/demographic-information/new",
+        "function": "STRING"
+      },
+      "formula_string": "\"https://outbountysandbox.stackerhq.com/outbountytest/demographic-information/new\"",
+      "stacker_dynamic_field": true
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__insurance_info",
+    "label": "Insurance Info",
+    "api_name": "providers__insurance_info",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "lookup",
+    "is_primary": false,
+    "options": {
+      "lookup_target": "object.custom.insurance_information"
+    },
+    "connection_options": {
+      "is_disabled": true
+    },
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__pronouns",
+    "label": "Pronouns",
+    "api_name": "providers__pronouns",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "He,Him,His",
+          "value": "He,Him,His"
+        },
+        {
+          "label": "She,Her,Hers",
+          "value": "She,Her,Hers"
+        },
+        {
+          "label": "They,Them,Theirs",
+          "value": "They,Them,Theirs"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__practice_name",
+    "label": "Practice Name",
+    "api_name": "providers__practice_name",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__practice_nick_name",
+    "label": "Practice Nick Name",
+    "api_name": "providers__practice_nick_name",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__address",
+    "label": "Address",
+    "api_name": "providers__address",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__phone",
+    "label": "Phone",
+    "api_name": "providers__phone",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__website",
+    "label": "Website",
+    "api_name": "providers__website",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "url",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__specialty_of_practice_focus",
+    "label": "Specialty of practice focus",
+    "api_name": "providers__specialty_of_practice_focus",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__language_support",
+    "label": "Language support",
+    "api_name": "providers__language_support",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__disability_accomodations",
+    "label": "Disability accomodations",
+    "api_name": "providers__disability_accomodations",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__headshot",
+    "label": "Headshot",
+    "api_name": "providers__headshot",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_file",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__years_in_field",
+    "label": "Years in field",
+    "api_name": "providers__years_in_field",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "number",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__attach_a_copy_of_your_intake_form_here",
+    "label": "Attach a copy of your intake form here:",
+    "api_name": "providers__attach_a_copy_of_your_intake_form_here",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_file",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__mission_statement",
+    "label": "Mission Statement",
+    "api_name": "providers__mission_statement",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_file",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__non_discrimination_policy",
+    "label": "Non-discrimination Policy",
+    "api_name": "providers__non_discrimination_policy",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_file",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__any_other_documents",
+    "label": "Any other documents",
+    "api_name": "providers__any_other_documents",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_file",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__confirm",
+    "label": "Confirm",
+    "api_name": "providers__confirm",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "date",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__confirm_demographic",
+    "label": "Confirm Demographic",
+    "api_name": "providers__confirm_demographic",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "date",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__is_the_information_about_cost_accessible_for_patients_before_a_visit",
+    "label": "Is the information about cost accessible for patients before a visit?",
+    "api_name": "providers__is_the_information_about_cost_accessible_for_patients_before_a_visit",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_have_a_sliding_scale_for_patients_with_limited_resources",
+    "label": "Do you have a sliding scale for patients with limited resources?",
+    "api_name": "providers__do_you_have_a_sliding_scale_for_patients_with_limited_resources",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_provide_resources_for_patients_with_limited_resources_eg_goodrx",
+    "label": "Do you provide resources for patients with limited resources? (e.g. GoodRx)",
+    "api_name": "providers__do_you_provide_resources_for_patients_with_limited_resources_eg_goodrx",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_payment_plans_an_option_in_your_practice",
+    "label": "Are payment plans an option in your practice?",
+    "api_name": "providers__are_payment_plans_an_option_in_your_practice",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_types_of_private_insurance_do_you_accept",
+    "label": "What types of private insurance do you accept?",
+    "api_name": "providers__what_types_of_private_insurance_do_you_accept",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_select",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Aetna",
+          "value": "Aetna"
+        },
+        {
+          "label": "Anthem Blue Cross Blue Shield",
+          "value": "Anthem Blue Cross Blue Shield"
+        },
+        {
+          "label": "Bright Health",
+          "value": "Bright Health"
+        },
+        {
+          "label": "Cigna",
+          "value": "Cigna"
+        },
+        {
+          "label": "Kaiser Permanente",
+          "value": "Kaiser Permanente"
+        },
+        {
+          "label": "United Healthcare",
+          "value": "United Healthcare"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_other_types_of_private_insurance_do_you_accept",
+    "label": "What other types of private insurance do you accept?",
+    "api_name": "providers__what_other_types_of_private_insurance_do_you_accept",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_types_of_public_insurance_do_you_accept",
+    "label": "What types of public insurance do you accept?",
+    "api_name": "providers__what_types_of_public_insurance_do_you_accept",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_select",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Medicaid",
+          "value": "Medicaid"
+        },
+        {
+          "label": "Medicare",
+          "value": "Medicare"
+        },
+        {
+          "label": "Colorado Access",
+          "value": "Colorado Access"
+        },
+        {
+          "label": "Colorado Community Health Alliance",
+          "value": "Colorado Community Health Alliance"
+        },
+        {
+          "label": "Uninsured",
+          "value": "Uninsured"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_have_a_limit_on_the_number_of_public_insurance_patients_youll_see",
+    "label": "Do you have a limit on the number of public insurance patients you’ll see?",
+    "api_name": "providers__do_you_have_a_limit_on_the_number_of_public_insurance_patients_youll_see",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__will_you_see_patients_without_insurance_coverage_or_those_who_choose_not_to_use_their_ins",
+    "label": "Will you see patients without insurance coverage or those who choose not to use their insurance? (e.g. paying out of pocket for care)",
+    "api_name": "providers__will_you_see_patients_without_insurance_coverage_or_those_who_choose_not_to_use_their_ins",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_require_an_id_to_see_patients",
+    "label": "Do you require an ID to see patients?",
+    "api_name": "providers__do_you_require_an_id_to_see_patients",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__is_information_about_costs_accessible_for_patients_before_a_visit",
+    "label": "Is information about costs accessible for patients before a visit?",
+    "api_name": "providers__is_information_about_costs_accessible_for_patients_before_a_visit",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_payment_plans_an_option_in_your_practice_2",
+    "label": "Are payment plans an option in your practice?",
+    "api_name": "providers__are_payment_plans_an_option_in_your_practice_2",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__lesbian",
+    "label": "Lesbian",
+    "api_name": "providers__lesbian",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__gay",
+    "label": "Gay",
+    "api_name": "providers__gay",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__bisexual_pansexual_sexually_fluid",
+    "label": "Bisexual / Pansexual / Sexually fluid",
+    "api_name": "providers__bisexual_pansexual_sexually_fluid",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__trans_feminine",
+    "label": "Trans feminine",
+    "api_name": "providers__trans_feminine",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__trans_masculine",
+    "label": "Trans masculine",
+    "api_name": "providers__trans_masculine",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__gender_non_conforming",
+    "label": "Gender non-conforming",
+    "api_name": "providers__gender_non_conforming",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__lgbtq_youth",
+    "label": "LGBTQ+ youth",
+    "api_name": "providers__lgbtq_youth",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__lgbtq_parents",
+    "label": "LGBTQ+ parents",
+    "api_name": "providers__lgbtq_parents",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__gay_men_with_hiv",
+    "label": "Gay men with HIV",
+    "api_name": "providers__gay_men_with_hiv",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__straight_men_with_hiv",
+    "label": "Straight men with HIV",
+    "api_name": "providers__straight_men_with_hiv",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__women_with_hiv",
+    "label": "Women with HIV",
+    "api_name": "providers__women_with_hiv",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__trans_people_with_hiv",
+    "label": "Trans people with HIV",
+    "api_name": "providers__trans_people_with_hiv",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__intersex",
+    "label": "Intersex",
+    "api_name": "providers__intersex",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__non_monogamous",
+    "label": "Non-monogamous",
+    "api_name": "providers__non_monogamous",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__financially_insecure",
+    "label": "Financially insecure",
+    "api_name": "providers__financially_insecure",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__those_who_suffer_from_substance_abuse",
+    "label": "Those who suffer from substance abuse",
+    "api_name": "providers__those_who_suffer_from_substance_abuse",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__those_with_identities_they_might_not_understand",
+    "label": "Those with identities they might not understand",
+    "api_name": "providers__those_with_identities_they_might_not_understand",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "dropdown",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Novice",
+          "value": "Novice"
+        },
+        {
+          "label": "Competent",
+          "value": "Competent"
+        },
+        {
+          "label": "Proficient",
+          "value": "Proficient"
+        },
+        {
+          "label": "Expert",
+          "value": "Expert"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_barriers_do_you_perceive_lgbtq_patients_have_when_accessing_health_care_and_how_have",
+    "label": "What barriers do you perceive LGBTQ+ patients have when accessing health care and how have you worked to address these barriers in your work?",
+    "api_name": "providers__what_barriers_do_you_perceive_lgbtq_patients_have_when_accessing_health_care_and_how_have",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__how_do_you_assess_and_utilize_what_types_of_communication_and_learning_styles_work_best_f",
+    "label": "How do you assess and utilize what types of communication and learning styles work best for a patient? (e.g. during a visit, in a patient’s medical “portal”, follow up needs, etc.)",
+    "api_name": "providers__how_do_you_assess_and_utilize_what_types_of_communication_and_learning_styles_work_best_f",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_patients_welcome_to_bring_an_advocate_for_their_care_into_all_appointments",
+    "label": "Are patients welcome to bring an advocate for their care into all appointments?",
+    "api_name": "providers__are_patients_welcome_to_bring_an_advocate_for_their_care_into_all_appointments",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_all_of_your_health_providers_licensed",
+    "label": "Are all of your health providers licensed?",
+    "api_name": "providers__are_all_of_your_health_providers_licensed",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_you_willing_to_provide_any_patient_with_stistd_tests_andor_birth_control",
+    "label": "Are you willing to provide any patient with STI/STD tests and/or birth control?",
+    "api_name": "providers__are_you_willing_to_provide_any_patient_with_stistd_tests_andor_birth_control",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__if_youre_not_willing_to_provide_stistd_testing_or_birth_control_explain_why_not",
+    "label": "If you're not willing to provide STI/STD testing or birth control, explain why not.",
+    "api_name": "providers__if_youre_not_willing_to_provide_stistd_testing_or_birth_control_explain_why_not",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_you_willing_to_provide_any_patient_with_preventative_stistd_measures_eg_prep_condoms_",
+    "label": "Are you willing to provide any patient with preventative STI/STD measures? (e.g. PrEP, condoms, etc* Note the monitoring needed for PrEP*)",
+    "api_name": "providers__are_you_willing_to_provide_any_patient_with_preventative_stistd_measures_eg_prep_condoms_",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_you_experienced_and_comfortable_providing_information_about_safer_stistd_practices",
+    "label": "Are you experienced and comfortable providing information about safer STI/STD practices?",
+    "api_name": "providers__are_you_experienced_and_comfortable_providing_information_about_safer_stistd_practices",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__will_you_provide_letters_of_recommendation_for_trans_affirming_surgeries_eg_wpath_letters",
+    "label": "Will you provide letters of recommendation for trans-affirming surgeries? (e.g. WPATH letters)",
+    "api_name": "providers__will_you_provide_letters_of_recommendation_for_trans_affirming_surgeries_eg_wpath_letters",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__if_yes_for_what_surgeries_are_you_comfortable_providing_letters",
+    "label": "If yes, for what surgeries are you comfortable providing letters?",
+    "api_name": "providers__if_yes_for_what_surgeries_are_you_comfortable_providing_letters",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_select",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Facial Reconstruction Surgery",
+          "value": "Facial Reconstruction Surgery"
+        },
+        {
+          "label": "Breast Augmentation",
+          "value": "Breast Augmentation"
+        },
+        {
+          "label": "Mastectomy",
+          "value": "Mastectomy"
+        },
+        {
+          "label": "Phalloplasty",
+          "value": "Phalloplasty"
+        },
+        {
+          "label": "Vaginoplasty",
+          "value": "Vaginoplasty"
+        },
+        {
+          "label": "Oophorectomy or Hysterectomy",
+          "value": "Oophorectomy or Hysterectomy"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__will_you_provide_letters_of_recommendation_for_hormone_replacement_therapy",
+    "label": "Will you provide letters of recommendation for hormone replacement therapy?",
+    "api_name": "providers__will_you_provide_letters_of_recommendation_for_hormone_replacement_therapy",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__if_injectable_hormones_are_used_will_you_assist_with_injection",
+    "label": "If injectable hormones are used will you assist with injection?",
+    "api_name": "providers__if_injectable_hormones_are_used_will_you_assist_with_injection",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_would_prevent_you_from_providing_the_patient_with_hormone_replacement_therapy_or_sur",
+    "label": "What would prevent you from providing the patient with hormone replacement therapy or surgery referral?",
+    "api_name": "providers__what_would_prevent_you_from_providing_the_patient_with_hormone_replacement_therapy_or_sur",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_implement_trauma_informed_care_andor_person_centered_care",
+    "label": "Do you implement trauma-informed care and/or person-centered care?",
+    "api_name": "providers__do_you_implement_trauma_informed_care_andor_person_centered_care",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__when_providing_referrals_to_patients_do_you_ensure_those_providers_are_trained_to_accommo",
+    "label": "When providing referrals to patients, do you ensure those providers are trained to accommodate their identities and needs? (Please explain)",
+    "api_name": "providers__when_providing_referrals_to_patients_do_you_ensure_those_providers_are_trained_to_accommo",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_minors_able_to_access_care_within_your_practice",
+    "label": "Are minors able to access care within your practice?",
+    "api_name": "providers__are_minors_able_to_access_care_within_your_practice",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_you_aware_of_the_laws_standing_that_allow_minors_to_access_care_keep_in_mind_insuranc",
+    "label": "Are you aware of the laws standing that allow minors to access care? (Keep in mind insurance complications with disclosing information to plan holders)",
+    "api_name": "providers__are_you_aware_of_the_laws_standing_that_allow_minors_to_access_care_keep_in_mind_insuranc",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_do_you_have_in_your_physical_environment_that_would_be_welcoming_to_an_lgbtq_identif",
+    "label": "What do you have in your physical environment that would be welcoming to an LGBTQ+ identified person or person living with HIV? (e.g. art, literature, symbols, marketing materials)",
+    "api_name": "providers__what_do_you_have_in_your_physical_environment_that_would_be_welcoming_to_an_lgbtq_identif",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_there_easily_accessible_gender_neutral_or_single_stall_restrooms_in_your_clinic_space",
+    "label": "Are there easily accessible gender neutral or single stall restrooms in your clinic spaces?",
+    "api_name": "providers__are_there_easily_accessible_gender_neutral_or_single_stall_restrooms_in_your_clinic_space",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__please_elaborate_on_why_you_believe_inclusive_care_is_not_only_needed_but_a_mandatory_ste",
+    "label": "Please elaborate on why you believe inclusive care is not only needed but a mandatory step within the healthcare industry.",
+    "api_name": "providers__please_elaborate_on_why_you_believe_inclusive_care_is_not_only_needed_but_a_mandatory_ste",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_practice_have_inclusive_paperwork_eg_list_more_than_male_and_female_gender_opti",
+    "label": "Does your practice have inclusive paperwork? (e.g. list more than male and female gender options, more than heterosexual or homosexual options & an option to add chosen name and identify pronouns)",
+    "api_name": "providers__does_your_practice_have_inclusive_paperwork_eg_list_more_than_male_and_female_gender_opti",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__is_there_anything_youd_like_to_add_about_your_paperwork_inclusivity",
+    "label": "Is there anything you'd like to add about your paperwork inclusivity?",
+    "api_name": "providers__is_there_anything_youd_like_to_add_about_your_paperwork_inclusivity",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_your_inclusivity_practices_extend_to_all_forms_of_communication_where_legal_name_is_no",
+    "label": "Do your inclusivity practices extend to all forms of communication where legal name is not mandatory? (e.g. referrals, emails, follow ups, internal documentation)",
+    "api_name": "providers__do_your_inclusivity_practices_extend_to_all_forms_of_communication_where_legal_name_is_no",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_entire_office_ensure_the_confidentiality_of_a_patients_lgbtq_identity_or_hiv_st",
+    "label": "Does your entire office ensure the confidentiality of a patient’s LGBTQ+ identity or HIV status?",
+    "api_name": "providers__does_your_entire_office_ensure_the_confidentiality_of_a_patients_lgbtq_identity_or_hiv_st",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__please_write_a_short_bio_for_the_provider_only",
+    "label": "Please write a short bio for the provider only.",
+    "api_name": "providers__please_write_a_short_bio_for_the_provider_only",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_intersectionalities_are_you_as_a_provider_bringing_into_your_patient_relationship_ie",
+    "label": "What intersectionalities are you as a provider bringing into your patient relationship?  (i.e. BIPOC, Sexual Identity, Gender Identity, PLHIV, etc.)",
+    "api_name": "providers__what_intersectionalities_are_you_as_a_provider_bringing_into_your_patient_relationship_ie",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_there_people_in_your_life_that_represent_any_of_the_above_listed_intersectionalities",
+    "label": "Are there people in your life that represent any of the above listed intersectionalities?",
+    "api_name": "providers__are_there_people_in_your_life_that_represent_any_of_the_above_listed_intersectionalities",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_clinic_have_any_satellite_locations_if_yes_where_are_they_located",
+    "label": "Does your clinic have any satellite locations? If yes, where are they located?",
+    "api_name": "providers__does_your_clinic_have_any_satellite_locations_if_yes_where_are_they_located",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_age_range_does_your_practice_primarily_serve",
+    "label": "What age range does your practice primarily serve?",
+    "api_name": "providers__what_age_range_does_your_practice_primarily_serve",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_are_the_office_hours",
+    "label": "What are the office hours?",
+    "api_name": "providers__what_are_the_office_hours",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__number_of_providers_within_your_practice",
+    "label": "Number of providers within your practice:",
+    "api_name": "providers__number_of_providers_within_your_practice",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "number",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_the_other_providers_in_your_office_likely_to_be_listed_as_an_inclusive_provider",
+    "label": "Are the other providers in your office likely to be listed as an inclusive provider?",
+    "api_name": "providers__are_the_other_providers_in_your_office_likely_to_be_listed_as_an_inclusive_provider",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_practice_provide_advocacy_for_understanding_insurance_coverage",
+    "label": "Does your practice provide advocacy for understanding insurance coverage?",
+    "api_name": "providers__does_your_practice_provide_advocacy_for_understanding_insurance_coverage",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__if_yes_do_you_have_a_dedicated_insurance_navigator",
+    "label": "If yes, do you have a dedicated insurance navigator?",
+    "api_name": "providers__if_yes_do_you_have_a_dedicated_insurance_navigator",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_the_common_medical_screenings_for_plhiv_and_lgbtq_people_within_your_insurance_networ",
+    "label": "Are the common medical screenings for PLHIV and LGBTQ+ people within your insurance networks? (e.g. bloodwork, pathology, x rays)",
+    "api_name": "providers__are_the_common_medical_screenings_for_plhiv_and_lgbtq_people_within_your_insurance_networ",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__is_your_practice_connected_to_a_pharmacy_that_is_versed_in_patient_support_pharmaceutical",
+    "label": "Is your practice connected to a pharmacy that is versed in patient support? (Pharmaceutical patient assistance programs)",
+    "api_name": "providers__is_your_practice_connected_to_a_pharmacy_that_is_versed_in_patient_support_pharmaceutical",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__would_they_be_aware_of_common_drug_interactions_between_new_prescriptions_and_hiv_medicat",
+    "label": "Would they be aware of common drug interactions between new prescriptions and HIV medications, HRT, or other common daily medications?",
+    "api_name": "providers__would_they_be_aware_of_common_drug_interactions_between_new_prescriptions_and_hiv_medicat",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__would_they_be_sensitive_to_the_privacy_of_patients_receiving_these_medications_eg_using_d",
+    "label": "Would they be sensitive to the privacy of patients receiving these medications? (e.g. using discretion when discussing medications over the counter)",
+    "api_name": "providers__would_they_be_sensitive_to_the_privacy_of_patients_receiving_these_medications_eg_using_d",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__describe_any_concerns_you_may_have_about_the_experience_level_of_staff_that_could_create_",
+    "label": "Describe any concerns you may have about the experience level of staff that could create an uncomfortable situation for LGBTQ+, PLHIV, or BIPOC clients.,etc.)",
+    "api_name": "providers__describe_any_concerns_you_may_have_about_the_experience_level_of_staff_that_could_create_",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__have_you_been_trained_on_the_history_of_medical_malpractice_and_mistreatment_of_the_ident",
+    "label": "Have you been trained on the history of medical malpractice and mistreatment of the identities listed in this questionnaire? (e.g. AIDS/HIV epidemic, transgender gatekeeping)",
+    "api_name": "providers__have_you_been_trained_on_the_history_of_medical_malpractice_and_mistreatment_of_the_ident",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_resources_do_you_use_to_stay_up_to_date_with_the_latest_medical_social_developments_",
+    "label": "What resources do you use to stay up to date with the latest medical & social developments? (i.e. are you a part of the movement for progressive and inclusive health care)",
+    "api_name": "providers__what_resources_do_you_use_to_stay_up_to_date_with_the_latest_medical_social_developments_",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_or_your_organization_have_a_mission_statement_for_inclusion_non_discrimination_and",
+    "label": "Do you or your organization have a mission statement for inclusion, non-discrimination, and respect which applies to all people and that staff are expected to uphold?",
+    "api_name": "providers__do_you_or_your_organization_have_a_mission_statement_for_inclusion_non_discrimination_and",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_practices_non_discrimination_policy_include_lgbtq_identities_and_hiv_status",
+    "label": "Does your practice’s non-discrimination policy include LGBTQ+ identities and HIV status?",
+    "api_name": "providers__does_your_practices_non_discrimination_policy_include_lgbtq_identities_and_hiv_status",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__describe_formal_education_or_training_youve_had_regarding_the_sexual_health_of_the_identi",
+    "label": "Describe formal education or training you’ve had regarding the sexual health of the identities of the LGBTQ+ communities.",
+    "api_name": "providers__describe_formal_education_or_training_youve_had_regarding_the_sexual_health_of_the_identi",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__what_methodologies_do_you_or_your_practice_use_to_schedule_or_communicate_with_patients",
+    "label": "What methodologies do you or your practice use to schedule or communicate with patients?",
+    "api_name": "providers__what_methodologies_do_you_or_your_practice_use_to_schedule_or_communicate_with_patients",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "long_text",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_or_your_organization_have_a_goal_to_quickly_respond_to_patient_phone_calls_text_me",
+    "label": "Do you or your organization have a goal to quickly respond to patient phone calls, text messages, and emails?",
+    "api_name": "providers__do_you_or_your_organization_have_a_goal_to_quickly_respond_to_patient_phone_calls_text_me",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_have_access_to_virtual_appointments_for_people_who_may_have_trouble_attending_visi",
+    "label": "Do you have access to virtual appointments for people who may have trouble attending visits in person?",
+    "api_name": "providers__do_you_have_access_to_virtual_appointments_for_people_who_may_have_trouble_attending_visi",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_have_drop_in_appointments_or_walk_in_clinics",
+    "label": "Do you have drop in appointments or walk in clinics?",
+    "api_name": "providers__do_you_have_drop_in_appointments_or_walk_in_clinics",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__is_your_clinic_easily_accessible_by_public_transportation",
+    "label": "Is your clinic easily accessible by public transportation?",
+    "api_name": "providers__is_your_clinic_easily_accessible_by_public_transportation",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_offer_any_transportation_assistance_resources_to_get_to_medical_appointments",
+    "label": "Do you offer any transportation assistance resources to get to medical appointments?",
+    "api_name": "providers__do_you_offer_any_transportation_assistance_resources_to_get_to_medical_appointments",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_practice_commonly_make_external_referrals",
+    "label": "Does your practice commonly make external referrals?",
+    "api_name": "providers__does_your_practice_commonly_make_external_referrals",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_you_aware_of_local_resources_that_support_plhiv_lgbtq_and_housing_insecure_people",
+    "label": "Are you aware of local resources that support PLHIV, LGBTQ+ and Housing insecure people?",
+    "api_name": "providers__are_you_aware_of_local_resources_that_support_plhiv_lgbtq_and_housing_insecure_people",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_you_able_to_identify_and_diagnose_substance_use_disorders_and_recommend_help_to_those",
+    "label": "Are you able to identify and diagnose substance use disorders and recommend help to those that struggle with them?",
+    "api_name": "providers__are_you_able_to_identify_and_diagnose_substance_use_disorders_and_recommend_help_to_those",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_you_able_to_identify_and_diagnose_mental_health_disorders_and_recommend_help_to_those",
+    "label": "Are you able to identify and diagnose mental health disorders and recommend help to those that struggle with them?",
+    "api_name": "providers__are_you_able_to_identify_and_diagnose_mental_health_disorders_and_recommend_help_to_those",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__is_your_offices_accessible_to_people_with_limited_mobility_andor_wheelchair_users",
+    "label": "Is your office(s) accessible to people with limited mobility and/or wheelchair users?",
+    "api_name": "providers__is_your_offices_accessible_to_people_with_limited_mobility_andor_wheelchair_users",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__are_there_specific_days_that_your_office_sees_plhiv_lgbtq_people",
+    "label": "Are there specific days that your office sees PLHIV? LGBTQ+ people?",
+    "api_name": "providers__are_there_specific_days_that_your_office_sees_plhiv_lgbtq_people",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__do_you_have_any_staff_who_are_openly_lgbtq_or_plhiv",
+    "label": "Do you have any staff who are openly LGBTQ+ or PLHIV?",
+    "api_name": "providers__do_you_have_any_staff_who_are_openly_lgbtq_or_plhiv",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_office_offer_child_friendly_spaces_or_child_care",
+    "label": "Does your office offer child friendly spaces or child care?",
+    "api_name": "providers__does_your_office_offer_child_friendly_spaces_or_child_care",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "checkbox",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__will_you_provide_home_visits_if_necessary_for_your_patients",
+    "label": "Will you provide home visits if necessary for your patients?",
+    "api_name": "providers__will_you_provide_home_visits_if_necessary_for_your_patients",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__does_your_office_have_drop_in_days_or_hours_for_housing_insecure_or_financially_insecure_",
+    "label": "Does your office have drop in days or hours for housing insecure or financially insecure people? (i.e. people who may have a hard time scheduling and keeping appointment times)",
+    "api_name": "providers__does_your_office_have_drop_in_days_or_hours_for_housing_insecure_or_financially_insecure_",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__will_your_office_accommodate_patients_being_late_in_circumstances_out_of_their_hands_to_a",
+    "label": "Will your office accommodate patients being late in circumstances out of their hands? (To accommodate housing insecurity, bus travel, traveling a distance for inclusive care)",
+    "api_name": "providers__will_your_office_accommodate_patients_being_late_in_circumstances_out_of_their_hands_to_a",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "string",
+    "is_primary": false,
+    "options": {},
+    "connection_options": {},
+    "tags": {}
+  },
+  {
+    "_sid": "field.custom.providers.providers__which_of_the_following_identity_categories_has_your_staff_attended_training_on_or_had_oth",
+    "label": "Which of the following identity categories has your staff attended training on or had other higher education for providing care in a welcoming, culturally humble, and non-stigmatizing manner? (Select all that apply)",
+    "api_name": "providers__which_of_the_following_identity_categories_has_your_staff_attended_training_on_or_had_oth",
+    "object_id": "object.custom.providers",
+    "feature_id": "feature.custom.providers",
+    "_object_id": "field",
+    "type": "multi_select",
+    "is_primary": false,
+    "options": {
+      "options": [
+        {
+          "label": "Lesbian",
+          "value": "Lesbian"
+        },
+        {
+          "label": "Gay",
+          "value": "Gay"
+        },
+        {
+          "label": "Bisexual / Pansexual / Sexually Fluid",
+          "value": "Bisexual / Pansexual / Sexually Fluid"
+        },
+        {
+          "label": "Transgender / Gender Non-Conforming / Gender Fluid",
+          "value": "Transgender / Gender Non-Conforming / Gender Fluid"
+        },
+        {
+          "label": "LGBTQ Youth Care",
+          "value": "LGBTQ Youth Care"
+        },
+        {
+          "label": "LGBTQ Parents",
+          "value": "LGBTQ Parents"
+        },
+        {
+          "label": "Trauma Sensitivity",
+          "value": "Trauma Sensitivity"
+        },
+        {
+          "label": "People Living with HIV",
+          "value": "People Living with HIV"
+        },
+        {
+          "label": "Intersex",
+          "value": "Intersex"
+        },
+        {
+          "label": "Ageism",
+          "value": "Ageism"
+        },
+        {
+          "label": "Sizeism",
+          "value": "Sizeism"
+        },
+        {
+          "label": "Ableism / Disabilities",
+          "value": "Ableism / Disabilities"
+        },
+        {
+          "label": "Substance Use",
+          "value": "Substance Use"
+        },
+        {
+          "label": "Racial and Cultural Identity, Discrimination and Minority Stress",
+          "value": "Racial and Cultural Identity, Discrimination and Minority Stress"
+        },
+        {
+          "label": "General Inclusivity",
+          "value": "General Inclusivity"
+        }
+      ]
+    },
+    "connection_options": {},
+    "tags": {}
+  }
+]
