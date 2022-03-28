@@ -8,7 +8,7 @@ import Error from "../../components/error"
 
 const ProviderDetail = () => {
   const router = useRouter()
-  const { id } = router.query
+  const { id } = router.query  
   const provider = useSWR<Provider, Error>(`/api/provider/${id}`, fetcher)
 
   return (
@@ -18,7 +18,7 @@ const ProviderDetail = () => {
           <NavBar />
         </header>
         <div className="font-sans antialiased text-gray-900 leading-normal tracking-wider">
-          {provider.error ? (
+          {provider?.error ? (
             <Error
               name={provider.error.name}
               message={provider.error.message}

@@ -1,20 +1,54 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { Popover, Transition, Dialog } from "@headlessui/react"
+import { ExclamationIcon, XIcon } from "@heroicons/react/outline"
+// import ProviderDetail from "../pages/provider/[id]"
+import { fetcher } from "../utils"
+import useSWR from "swr"
+import { Provider } from "../pages/api/provider/[id]"
 
 type Props = {
   isModalOpen: boolean
   setIsModalOpen: Function
   providerIdx: number
   data: any
+  providerID: string
+  setProviderID: Function
 }
 
 export const Modalwindow: React.FC<Props> = ({
   isModalOpen,
   setIsModalOpen,
   providerIdx,
-  data,
+  data: providerData,
+  providerID,
+  setProviderID,
 }) => {
-  const displayInfo = data ? [data[providerIdx]] : null
+  const provider = useSWR<Provider, Error>(
+    `/api/provider/${providerID}`,
+    fetcher
+  )
+
+  const providerInfo : any = provider.data?.attributes ? [...provider.data?.attributes] : null
+
+  //alter array items order for image to render on top of modal
+  const sortData = (arry: []) => {
+    if(!arry) return
+    let data : any[] = [...arry]
+    let providerImg: any = []
+    arry.forEach((item: any, index: number) => {
+      if(item.label === "Headshot") {
+        providerImg = data.splice(index, 1)
+        return
+      }
+    })
+    return providerImg.concat(data)
+  }
+  const sortedData = sortData(providerInfo)
+
+  useEffect(() => {
+    console.log(sortedData)
+    console.log(provider.data?.attributes)
+  }, [provider.data?.attributes])
 
   return (
     <Transition.Root show={isModalOpen} as={Fragment}>
@@ -35,6 +69,8 @@ export const Modalwindow: React.FC<Props> = ({
           >
             <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
           </Transition.Child>
+
+          {/* This element is to trick the browser into centering the modal contents. */}
           <span
             className="hidden sm:inline-block sm:align-middle sm:h-screen"
             aria-hidden="true"
@@ -50,31 +86,43 @@ export const Modalwindow: React.FC<Props> = ({
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
-              MODAL WINDOW
-              {/* DESTRUCTURED ARRAY OF 1 OBJECT */}
-              {displayInfo?.map((obj, index) => {
-                const {
-                  _sid,
-                  providers__headshot,
-                  providers__disability_accomdations,
-                  providers__email,
-                } = obj
-                const { url, filename } = providers__headshot
-                return (
-                  <React.Fragment key={index}>
-                    <h1>{providers__email}</h1>
-                  </React.Fragment>
-                )
-              })}
-              <div className="mt-5 sm:mt-6">
+            <div className="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+              <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
                 <button
                   type="button"
-                  className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                  className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   onClick={() => setIsModalOpen(false)}
                 >
-                  Close
+                  <span className="sr-only">Close</span>
+                  <XIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
+              </div>
+              <div className="bg-white">
+                <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+                  <div className="space-y-12">
+                    <ul role="list" className="mx-auto">
+                      <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+                        <div className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none mx-6 lg:mx-0">
+                          {sortedData?.map((attribute: any) => (
+                            <li key={attribute._sid}>
+                              <h2 className="text-2xl font-semibold">
+                                {attribute.label}
+                              </h2>
+                              <p className="text-sm">{attribute.value}</p>
+                              {attribute.url ? (
+                                <img
+                                  src={attribute.url}
+                                  alt={attribute.label}
+                                />
+                              ) : null}
+                            </li>
+                          ))}
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+                  {/* <ProviderDetail /> */}
+                </div>
               </div>
             </div>
           </Transition.Child>
@@ -83,3 +131,125 @@ export const Modalwindow: React.FC<Props> = ({
     </Transition.Root>
   )
 }
+
+//https://tailwindui.com/components/marketing/sections/faq-sections
+// {provider.data?.attributes?.map((person, index) => {
+//   return (
+//     <li key={`${index}`}>
+//       <div className="space-y-6">
+//         <img
+//           className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+//           src={providers__headshot[0].url}
+//           alt=""
+//         />
+//         <div className="space-y-2">
+//           <div className="text-lg leading-6 font-medium space-y-1">
+//             <h3>{person.name}</h3>
+//             <p className="text-indigo-600">
+//               {person.role}
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:py-20 lg:px-8 ">
+//         <div className="lg:grid lg:grid-cols-3 lg:gap-8 mt-6 ">
+//           <div className="text-left ">
+//             <h2 className="text-3xl font-extrabold text-gray-900">
+//               Personal Details
+//             </h2>
+//           </div>
+//           <div className="lg:mt-0 lg:col-span-2 text-left">
+//             <dl className="space-y-12">
+//               {/* border */}
+//               <div className="border-gray-400 border-2 pl-5">
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Name
+//                 </dt>
+//                 <dd className="mb-2 text-base">
+//                   {/* {providers__name} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Pronouns
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* {providers__pronouns} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Email
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* <a href={`mailto:${providers__email}`}>{providers__email}</a> */}
+//                 </dd>
+//               </div>
+//             </dl>
+//           </div>
+//         </div>
+//         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
+//           <div className="text-left mt-6">
+//             <h2 className="text-3xl font-extrabold text-gray-900">
+//               Practice Information
+//             </h2>
+//           </div>
+//           <div className=" lg:mt-0 lg:col-span-2 text-left border-gray-400 border-2 pl-5">
+//             <dl className="space-y-12">
+//               <div>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                 Practice Name
+//                 </dt>
+//                 <dd className="mb-2 text-base">
+//                   {/* {providers__practice_name} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Nickname
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* {providers__practice_nick_name} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Address
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* NEED A LINK FOR EMAIL */}
+//                   {/* {providers__address} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                 Phone
+//                 </dt>
+//                 <dd className="mb-2 text-base">
+//                   {/* {providers__phone} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Website
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* {providers__website} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Practice Speciality/Focus
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* NEED A LINK FOR EMAIL */}
+//                   {/* {providers__specialty_of_practice_focus} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   Language Support
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* NEED A LINK FOR EMAIL */}
+//                   {/* {providers__language_support} */}
+//                 </dd>
+//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
+//                   DISABILITY/ACCOMODATIONS
+//                 </dt>
+//                 <dd className="mb-2 text-base text-gray-900">
+//                   {/* NEED A LINK FOR EMAIL */}
+//                   {/* {providers__disability_accomodations} */}
+//                 </dd>
+//               </div>
+//             </dl>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//   )
+// })}
