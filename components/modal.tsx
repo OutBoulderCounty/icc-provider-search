@@ -28,28 +28,6 @@ export const Modalwindow: React.FC<Props> = ({
     fetcher
   )
 
-  const providerInfo : any = provider.data?.attributes ? [...provider.data?.attributes] : null
-
-  //alter array items order for image to render on top of modal
-  const sortData = (arry: []) => {
-    if(!arry) return
-    let data : any[] = [...arry]
-    let providerImg: any = []
-    arry.forEach((item: any, index: number) => {
-      if(item.label === "Headshot") {
-        providerImg = data.splice(index, 1)
-        return
-      }
-    })
-    return providerImg.concat(data)
-  }
-  const sortedData = sortData(providerInfo)
-
-  useEffect(() => {
-    console.log(sortedData)
-    console.log(provider.data?.attributes)
-  }, [provider.data?.attributes])
-
   return (
     <Transition.Root show={isModalOpen} as={Fragment}>
       <Dialog
@@ -100,26 +78,48 @@ export const Modalwindow: React.FC<Props> = ({
               <div className="bg-white">
                 <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
                   <div className="space-y-12">
-                    <ul role="list" className="mx-auto">
-                      <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
-                        <div className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none mx-6 lg:mx-0">
-                          {sortedData?.map((attribute: any) => (
-                            <li key={attribute._sid}>
-                              <h2 className="text-2xl font-semibold">
-                                {attribute.label}
-                              </h2>
-                              <p className="text-sm">{attribute.value}</p>
-                              {attribute.url ? (
-                                <img
-                                  src={attribute.url}
-                                  alt={attribute.label}
-                                />
-                              ) : null}
-                            </li>
-                          ))}
+                    {provider.data ? (
+                      <ul role="list" className="mx-auto">
+                        <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+                          <div className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none mx-6 lg:mx-0">
+                            {provider.data.personalAttributes.map(
+                              (attribute) => (
+                                <li key={attribute._sid}>
+                                  <h2 className="text-2xl font-semibold">
+                                    {attribute.label}
+                                  </h2>
+                                  <p className="text-sm">{attribute.value}</p>
+                                  {attribute.url ? (
+                                    <img
+                                      src={attribute.url}
+                                      alt={attribute.label}
+                                    />
+                                  ) : null}
+                                </li>
+                              )
+                            )}
+                            {provider.data.practiceAttributes.map(
+                              (attribute) => (
+                                <li key={attribute._sid}>
+                                  <h2 className="text-2xl font-semibold">
+                                    {attribute.label}
+                                  </h2>
+                                  <p className="text-sm">{attribute.value}</p>
+                                  {attribute.url ? (
+                                    <img
+                                      src={attribute.url}
+                                      alt={attribute.label}
+                                    />
+                                  ) : null}
+                                </li>
+                              )
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </ul>
+                      </ul>
+                    ) : (
+                      <div>Loading...</div>
+                    )}
                   </div>
                   {/* <ProviderDetail /> */}
                 </div>

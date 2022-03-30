@@ -20,7 +20,8 @@ export type Field = {
 
 export type Provider = {
   _sid: string
-  attributes: Array<ProviderAttribute>
+  personalAttributes: Array<ProviderAttribute>
+  practiceAttributes: Array<ProviderAttribute>
 }
 
 type ProviderAttribute = {
@@ -87,35 +88,64 @@ export default async function handler(
     const fields = (await fieldsResp.json()) as Array<Field>
     const provider = {
       _sid: data._sid,
-      attributes: [],
+      personalAttributes: [],
+      practiceAttributes: [],
     } as Provider
-    fields.forEach((field) => {
-      const response = data[field.api_name]
+    const sortedFields = sortFields(fields)
+    sortedFields.personal.forEach((field) => {
+      const value = data[field.api_name]
       if (
-        response !== null &&
-        response !== undefined &&
-        field.label !== "DGform"
+        value !== undefined &&
+        value !== null &&
+        field.api_name !== "providers__dgform"
       ) {
-        if (Array.isArray(response)) {
-          if (response.length > 0) {
-            const attribute = {
-              _sid: field._sid,
-              label: field.label,
-            } as ProviderAttribute
-            response.forEach((item) => {
-              if (item.url) {
-                attribute.url = item.url
-              } else if (item !== null) {
-                attribute.value = String(item)
-              }
-            })
-            provider.attributes.push(attribute)
-          }
-        } else {
-          provider.attributes.push({
+        if (Array.isArray(value) && value.length > 0) {
+          const attribute = {
             _sid: field._sid,
             label: field.label,
-            value: String(response),
+          } as ProviderAttribute
+          value.forEach((val) => {
+            if (val.url) {
+              attribute.url = val.url
+            } else if (val !== null) {
+              attribute.value = String(val)
+            }
+          })
+          provider.personalAttributes.push(attribute)
+        } else {
+          provider.personalAttributes.push({
+            _sid: field._sid,
+            label: field.label,
+            value: String(value),
+          })
+        }
+      }
+    })
+    sortedFields.practice.forEach((field) => {
+      const value = data[field.api_name]
+      if (
+        value !== undefined &&
+        value !== null &&
+        field.api_name !== "providers__dgform"
+      ) {
+        if (Array.isArray(value) && value.length > 0) {
+          const attribute = {
+            _sid: field._sid,
+            label: field.label,
+          } as ProviderAttribute
+          value.forEach((val) => {
+            if (val.url) {
+              attribute.url = val.url
+            } else if (val !== null) {
+              attribute.value = String(val)
+            }
+          })
+          provider.practiceAttributes.push(attribute)
+        } else {
+          provider.practiceAttributes.push({
+            _sid: field._sid,
+            label: field.label,
+            value: String(value),
           })
         }
       }
@@ -126,4 +156,58 @@ export default async function handler(
       message: "Provider not found",
     })
   }
+}
+
+function sortFields(fields: Array<Field>) {
+  const sortedFields = {
+    personal: [] as Array<Field>,
+    practice: [] as Array<Field>,
+  }
+  fields.forEach((field) => {
+    switch (field.api_name) {
+      case "providers__headshot":
+        insertAt(sortedFields.personal, 0, field)
+        break
+      case "providers__name":
+        insertAt(sortedFields.personal, 1, field)
+        break
+      case "providers__pronouns":
+        insertAt(sortedFields.personal, 2, field)
+        break
+      case "providers__email":
+        insertAt(sortedFields.personal, 3, field)
+        break
+      case "providers__practice_name":
+        insertAt(sortedFields.practice, 0, field)
+        break
+      case "providers__practice_nick_name":
+        insertAt(sortedFields.practice, 1, field)
+        break
+      case "providers__address":
+        insertAt(sortedFields.practice, 2, field)
+        break
+      case "providers__phone":
+        insertAt(sortedFields.practice, 3, field)
+        break
+      case "providers__website":
+        insertAt(sortedFields.practice, 4, field)
+        break
+      case "providers__specialty_of_practice_focus":
+        insertAt(sortedFields.practice, 5, field)
+        break
+      case "providers__language_support":
+        insertAt(sortedFields.practice, 6, field)
+        break
+      case "providers__disability_accomodations":
+        insertAt(sortedFields.practice, 7, field)
+        break
+      default:
+        sortedFields.practice.push(field)
+    }
+  })
+  return sortedFields
+}
+
+function insertAt(array: Array<any>, index: number, item: any) {
+  array.splice(index, 0, item)
 }
