@@ -18,22 +18,17 @@ const Home: NextPage = () => {
   //style the components
   //remove localstorage
   //fix the bug
-  const displayModal = (email: string) => {
-    const providerIndex = data?.findIndex(
-      (provider) => provider.providers__email === email
-    )
-    setProviderIdx(providerIndex)
-
-    if (data)
-      localStorage.setItem("ID", JSON.stringify(data[providerIdx]._sid))
+  const displayModal = (provider: any) => {
     setIsModalOpen(true)
-    if(typeof window !== "undefined") {
-      const id = JSON.parse(localStorage.getItem("ID") || "")
-      setProviderID(id)
+    if(data) {
+      if(typeof window !== "undefined") {
+        localStorage.setItem("ID", JSON.stringify(provider._sid))
+        const id = JSON.parse(localStorage.getItem("ID")||"")
+        setProviderID(id)
+        localStorage.removeItem("ID")
+      }         
     }
   }
-
-  const displayId = (provider: any) => console.log(provider._sid)
 
   return (
     <div className="min-h-screen flex flex-col justify-between">
@@ -46,7 +41,7 @@ const Home: NextPage = () => {
           role="list"
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 m-10"
         >
-          {data?.map((provider) => {
+          {data?.map((provider, index) => {
             // <li
             //   onClick={() => displayId(provider)}
             //   key={provider._sid}
@@ -54,7 +49,7 @@ const Home: NextPage = () => {
             // >
             return (
               <li
-                onClick={() => displayModal(provider.providers__email)}
+                onClick={() => displayModal(provider)}
                 key={provider._sid}
                 className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200 hover:cursor-pointer"
               >

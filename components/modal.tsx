@@ -28,6 +28,10 @@ export const Modalwindow: React.FC<Props> = ({
     fetcher
   )
 
+  useEffect(() => {
+    console.log(provider?.data)
+  }, [provider?.data])
+
   return (
     <Transition.Root show={isModalOpen} as={Fragment}>
       <Dialog
@@ -65,7 +69,7 @@ export const Modalwindow: React.FC<Props> = ({
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <div className="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-              <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
+              <div className="sm:block absolute top-0 right-0 pt-2 pr-2 pl-2">
                 <button
                   type="button"
                   className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -76,44 +80,85 @@ export const Modalwindow: React.FC<Props> = ({
                 </button>
               </div>
               <div className="bg-white">
-                <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
-                  <div className="space-y-12">
+                <div className="max-w-7xl mx-auto px-4 text-center sm:px-4 lg:px-8 lg:py-24">
+                  <div className="space-y-12 px-4 h-screen overflow-scroll">
                     {provider.data ? (
                       <ul role="list" className="mx-auto">
-                        <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
-                          <div className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none mx-6 lg:mx-0">
+                        <div className=" max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-24 lg:my-0">
+                          <div className="mx-auto w-full rounded-lg lg:rounded-l-lg lg:rounded-r-none lg:mx-0 ">
                             {provider.data.personalAttributes.map(
-                              (attribute) => (
-                                <li key={attribute._sid}>
-                                  <h2 className="text-2xl font-semibold">
-                                    {attribute.label}
-                                  </h2>
-                                  <p className="text-sm">{attribute.value}</p>
+                              (attribute, index) => (
+                                <li
+                                  className={`text-left ${
+                                    index === 3
+                                      ? "border-b-2 border-gray-400"
+                                      : ""
+                                  } ${
+                                    index === 0
+                                      ? "border-b-2 border-gray-400"
+                                      : ""
+                                  }`}
+                                  key={attribute._sid}
+                                >
+                                  {attribute.label === "Headshot" ? (
+                                    ""
+                                  ) : (
+                                    <h2
+                                      className={`text-2xl font-semibold border-gray-400 border-x-2 px-6 pt-2 `}
+                                    >
+                                      {attribute.label}
+                                    </h2>
+                                  )}
+                                  <p className={`text-sm border-gray-400 border-x-2 px-6 ${index === 3 ? 'pb-4' : ''}`}>
+                                    {attribute.value}
+                                  </p>
                                   {attribute.url ? (
-                                    <img
-                                      src={attribute.url}
-                                      alt={attribute.label}
-                                    />
+                                    <div className=" border-gray-400 ">
+                                      <img
+                                        src={attribute.url}
+                                        alt={attribute.label}
+                                        className={
+                                          attribute.label === "Headshot"
+                                            ? "mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+                                            : ""
+                                        }
+                                      />
+                                      <h2 className="text-3xl font-extrabold text-gray-900 mt-4">
+                                        Personal Details
+                                      </h2>
+                                    </div>
                                   ) : null}
                                 </li>
                               )
                             )}
-                            {provider.data.practiceAttributes.map(
-                              (attribute) => (
-                                <li key={attribute._sid}>
-                                  <h2 className="text-2xl font-semibold">
-                                    {attribute.label}
-                                  </h2>
-                                  <p className="text-sm">{attribute.value}</p>
-                                  {attribute.url ? (
-                                    <img
-                                      src={attribute.url}
-                                      alt={attribute.label}
-                                    />
-                                  ) : null}
-                                </li>
-                              )
-                            )}
+
+                            <div className="">
+                              <div className="text-left mt-6">
+                                <h2 className="text-3xl font-extrabold text-gray-900">
+                                  Practice Information
+                                </h2>
+                              </div>
+                            </div>
+                            <div className="border-gray-400 border-2">
+                              <dt>
+                              {provider.data.practiceAttributes.map(
+                                (attribute) => (
+                                  <React.Fragment key={attribute._sid}>
+                                    <dt className="text-left font-medium text-gray-500 px-6 pt-2 leading-6 ">
+                                      {attribute.label}
+                                    </dt>
+                                    <dd className="text-sm px-6 text-left text-gray-900 font-bold text-base">{attribute.value}</dd>
+                                    {attribute.url ? (
+                                      <img
+                                        src={attribute.url}
+                                        alt={attribute.label}
+                                      />
+                                    ) : null}
+                                  </React.Fragment>
+                                )
+                              )}
+                              </dt>
+                            </div>
                           </div>
                         </div>
                       </ul>
