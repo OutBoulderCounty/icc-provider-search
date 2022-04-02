@@ -14,10 +14,6 @@ const Home: NextPage = () => {
   const [providerIdx, setProviderIdx] = useState<any>(0)
   const [providerID, setProviderID] = useState<string>("")
 
-  //create a function find the data that matches and open the modal window
-  //style the components
-  //remove localstorage
-  //fix the bug
   const displayModal = (provider: any) => {
     setIsModalOpen(true)
     if(data) {
@@ -42,18 +38,12 @@ const Home: NextPage = () => {
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 m-10"
         >
           {data?.map((provider, index) => {
-            // <li
-            //   onClick={() => displayId(provider)}
-            //   key={provider._sid}
-            //   className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200 hover:cursor-pointer"
-            // >
             return (
               <li
                 onClick={() => displayModal(provider)}
                 key={provider._sid}
                 className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200 hover:cursor-pointer"
               >
-                {/* <Link href={`/provider/${provider._sid}`}> */}
                 <div className="w-full flex items-center justify-between p-6 space-x-6">
                   <div className="flex-1 truncate">
                     <div className="flex items-center space-x-3">
@@ -66,7 +56,6 @@ const Home: NextPage = () => {
                     </p>
                   </div>
                 </div>
-                {/* </Link> */}
               </li>
             )
           })}

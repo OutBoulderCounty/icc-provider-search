@@ -126,7 +126,8 @@ export default async function handler(
       if (
         value !== undefined &&
         value !== null &&
-        field.api_name !== "providers__dgform"
+        field.api_name !== "providers__dgform" &&
+        field.api_name !== "providers__status"
       ) {
         if (Array.isArray(value) && value.length > 0) {
           const attribute = {

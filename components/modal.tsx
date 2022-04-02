@@ -28,9 +28,7 @@ export const Modalwindow: React.FC<Props> = ({
     fetcher
   )
 
-  useEffect(() => {
-    console.log(provider?.data)
-  }, [provider?.data])
+  const len: number = (provider?.data?.personalAttributes.length || 0); 
 
   return (
     <Transition.Root show={isModalOpen} as={Fragment}>
@@ -68,8 +66,8 @@ export const Modalwindow: React.FC<Props> = ({
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-              <div className="sm:block absolute top-0 right-0 pt-2 pr-2 pl-2">
+            <div className="relative inline-block align-bottom bg-white rounded-lg px-4 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+              <div className="sm:block absolute top-0 right-0 pt-2 pr-2 ml-3 pl-2">
                 <button
                   type="button"
                   className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -79,18 +77,18 @@ export const Modalwindow: React.FC<Props> = ({
                   <XIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
               </div>
-              <div className="bg-white">
+              <div className="bg-white h-screen overflow-y-scroll mt-4">
                 <div className="max-w-7xl mx-auto px-4 text-center sm:px-4 lg:px-8 lg:py-24">
-                  <div className="space-y-12 px-4 h-screen overflow-scroll">
+                  <div className="space-y-12 px-4 ">
                     {provider.data ? (
                       <ul role="list" className="mx-auto">
-                        <div className=" max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-24 lg:my-0">
-                          <div className="mx-auto w-full rounded-lg lg:rounded-l-lg lg:rounded-r-none lg:mx-0 ">
+                        <div className=" max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-12 lg:my-0">
+                          <div className="mx-auto w-full rounded-lg lg:rounded-l-lg lg:rounded-r-none lg:mx-0 border-gray-400">
                             {provider.data.personalAttributes.map(
                               (attribute, index) => (
                                 <li
                                   className={`text-left ${
-                                    index === 3
+                                    index === len - 1
                                       ? "border-b-2 border-gray-400"
                                       : ""
                                   } ${
@@ -109,11 +107,15 @@ export const Modalwindow: React.FC<Props> = ({
                                       {attribute.label}
                                     </h2>
                                   )}
-                                  <p className={`text-sm border-gray-400 border-x-2 px-6 ${index === 3 ? 'pb-4' : ''}`}>
+                                  <p
+                                    className={`text-sm border-gray-400 border-x-2 px-6 ${
+                                      index === len-1 ? "pb-4" : ""
+                                    }`}
+                                  >
                                     {attribute.value}
                                   </p>
                                   {attribute.url ? (
-                                    <div className=" border-gray-400 ">
+                                    <div className="">
                                       <img
                                         src={attribute.url}
                                         alt={attribute.label}
@@ -132,32 +134,33 @@ export const Modalwindow: React.FC<Props> = ({
                               )
                             )}
 
-                            <div className="">
-                              <div className="text-left mt-6">
-                                <h2 className="text-3xl font-extrabold text-gray-900">
-                                  Practice Information
-                                </h2>
-                              </div>
+                            <div className="text-left mt-6">
+                              <h2 className="text-3xl font-extrabold text-gray-900">
+                                Practice Information
+                              </h2>
                             </div>
-                            <div className="border-gray-400 border-2">
-                              <dt>
-                              {provider.data.practiceAttributes.map(
-                                (attribute) => (
-                                  <React.Fragment key={attribute._sid}>
-                                    <dt className="text-left font-medium text-gray-500 px-6 pt-2 leading-6 ">
-                                      {attribute.label}
-                                    </dt>
-                                    <dd className="text-sm px-6 text-left text-gray-900 font-bold text-base">{attribute.value}</dd>
-                                    {attribute.url ? (
-                                      <img
-                                        src={attribute.url}
-                                        alt={attribute.label}
-                                      />
-                                    ) : null}
-                                  </React.Fragment>
-                                )
-                              )}
-                              </dt>
+
+                            <div className="border-gray-400 border-2 mb-6">
+                              <dl>
+                                {provider.data.practiceAttributes.map(
+                                  (attribute) => (
+                                    <React.Fragment key={attribute._sid}>
+                                      <dt className="text-left font-medium text-gray-500 px-6 pt-2 leading-6 ">
+                                        {attribute.label}
+                                      </dt>
+                                      <dd className="text-sm px-6 text-left text-gray-900 font-bold text-base">
+                                        {attribute.value}
+                                      </dd>
+                                      {attribute.url ? (
+                                        <img
+                                          src={attribute.url}
+                                          alt={attribute.label}
+                                        />
+                                      ) : null}
+                                    </React.Fragment>
+                                  )
+                                )}
+                              </dl>
                             </div>
                           </div>
                         </div>
@@ -176,125 +179,3 @@ export const Modalwindow: React.FC<Props> = ({
     </Transition.Root>
   )
 }
-
-//https://tailwindui.com/components/marketing/sections/faq-sections
-// {provider.data?.attributes?.map((person, index) => {
-//   return (
-//     <li key={`${index}`}>
-//       <div className="space-y-6">
-//         <img
-//           className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-//           src={providers__headshot[0].url}
-//           alt=""
-//         />
-//         <div className="space-y-2">
-//           <div className="text-lg leading-6 font-medium space-y-1">
-//             <h3>{person.name}</h3>
-//             <p className="text-indigo-600">
-//               {person.role}
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:py-20 lg:px-8 ">
-//         <div className="lg:grid lg:grid-cols-3 lg:gap-8 mt-6 ">
-//           <div className="text-left ">
-//             <h2 className="text-3xl font-extrabold text-gray-900">
-//               Personal Details
-//             </h2>
-//           </div>
-//           <div className="lg:mt-0 lg:col-span-2 text-left">
-//             <dl className="space-y-12">
-//               {/* border */}
-//               <div className="border-gray-400 border-2 pl-5">
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Name
-//                 </dt>
-//                 <dd className="mb-2 text-base">
-//                   {/* {providers__name} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Pronouns
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* {providers__pronouns} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Email
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* <a href={`mailto:${providers__email}`}>{providers__email}</a> */}
-//                 </dd>
-//               </div>
-//             </dl>
-//           </div>
-//         </div>
-//         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-//           <div className="text-left mt-6">
-//             <h2 className="text-3xl font-extrabold text-gray-900">
-//               Practice Information
-//             </h2>
-//           </div>
-//           <div className=" lg:mt-0 lg:col-span-2 text-left border-gray-400 border-2 pl-5">
-//             <dl className="space-y-12">
-//               <div>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                 Practice Name
-//                 </dt>
-//                 <dd className="mb-2 text-base">
-//                   {/* {providers__practice_name} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Nickname
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* {providers__practice_nick_name} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Address
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* NEED A LINK FOR EMAIL */}
-//                   {/* {providers__address} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                 Phone
-//                 </dt>
-//                 <dd className="mb-2 text-base">
-//                   {/* {providers__phone} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Website
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* {providers__website} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Practice Speciality/Focus
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* NEED A LINK FOR EMAIL */}
-//                   {/* {providers__specialty_of_practice_focus} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   Language Support
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* NEED A LINK FOR EMAIL */}
-//                   {/* {providers__language_support} */}
-//                 </dd>
-//                 <dt className="mt-4 text-lg leading-6 font-medium text-gray-500">
-//                   DISABILITY/ACCOMODATIONS
-//                 </dt>
-//                 <dd className="mb-2 text-base text-gray-900">
-//                   {/* NEED A LINK FOR EMAIL */}
-//                   {/* {providers__disability_accomodations} */}
-//                 </dd>
-//               </div>
-//             </dl>
-//           </div>
-//         </div>
-//       </div>
-//     </li>
-//   )
-// })}
