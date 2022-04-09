@@ -28,6 +28,7 @@ export const Modalwindow: React.FC<Props> = ({
     fetcher
   )
 
+  //Retrieving the length to use identify the last object in the array
   const len: number = (provider?.data?.personalAttributes.length || 0); 
 
   return (
