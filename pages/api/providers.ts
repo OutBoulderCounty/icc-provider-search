@@ -13,17 +13,17 @@ export type Provider = {
     url: string
     filename: string
   }> | null
-  providers__name: string
+  providers__name: string // search
   providers__pronouns: string | null
-  providers__practice_name: string
-  providers__practice_nick_name: string | null
-  providers__address: string | null
-  providers__specialty_of_practice_focus: string | null
-  providers__phone: string | null
-  providers__disability_accomodations: string | null
-  providers__language_support: string | null
+  providers__practice_name: string // search
+  providers__practice_nick_name: string | null // search
+  providers__address: string | null // search
+  providers__specialty_of_practice_focus: string | null // search
+  providers__phone: string | null // search
+  providers__disability_accomodations: string | null // search
+  providers__language_support: string | null // search
   providers__website: string | null
-  providers__email: string
+  providers__email: string // search
   providers__status: string
 }
 
