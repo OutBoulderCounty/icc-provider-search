@@ -17,6 +17,9 @@ const Home: NextPage = () => {
     null
   )
 
+  //Provider Attributes Array
+  const providerAttr = data ? Object.keys(data) : null;
+
   //Modal diplays provider information when clicked
   const displayModal = (provider: any) => {
     setIsModalOpen(true)
@@ -76,9 +79,17 @@ const Home: NextPage = () => {
         if(provider.providers__email?.toLowerCase().includes(target.value.toLowerCase())){
           return provider
         }
-        
       })
-      // console.log(results)
+
+      //Provider Attributes Array
+      //  const providerAttr = data ? Object.keys(data) : null;
+      // const results = data.filter((provider: any) => {
+      //   providerAttr?.forEach((attr) => {
+      //     provider[attr]?.includes(target.value.toLowerCase())
+      //       return provider
+      //   })
+      // })
+
       setFilteredProviders(results)
     }
   }
