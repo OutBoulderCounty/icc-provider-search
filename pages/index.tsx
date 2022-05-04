@@ -18,8 +18,8 @@ const Home: NextPage = () => {
   )
 
   //Provider Attributes Array
-  const providerAttr = data ? Object.keys(data) : null;
-
+  const providerAttr = data ? Object.keys(data[0]).filter((attr) => attr.endsWith('name') || attr.endsWith('address') || attr.endsWith('focus') || attr.endsWith('phone') || attr.endsWith('accomodations') || attr.endsWith('support') || attr.endsWith('email')) : null
+    
   //Modal diplays provider information when clicked
   const displayModal = (provider: any) => {
     setIsModalOpen(true)
@@ -55,9 +55,6 @@ const Home: NextPage = () => {
         if(provider.providers__name.toLowerCase().includes(target.value.toLowerCase())){
           return provider
         }
-        if(provider.providers__pronouns?.toLowerCase().includes(target.value.toLowerCase())){
-          return provider
-        }
         if(provider.providers__practice_name.toLowerCase().includes(target.value.toLowerCase())){
           return provider
         }
@@ -70,6 +67,9 @@ const Home: NextPage = () => {
         if(provider.providers__specialty_of_practice_focus?.toLowerCase().includes(target.value.toLowerCase())){
           return provider
         }
+        if(provider.providers__phone?.toLowerCase().includes(target.value.toLowerCase())){
+          return provider
+        }        
         if(provider.providers__disability_accomodations?.toLowerCase().includes(target.value.toLowerCase())){
           return provider
         }
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
         }
       })
 
-      //Provider Attributes Array
+      // Provider Attributes Array
       //  const providerAttr = data ? Object.keys(data) : null;
       // const results = data.filter((provider: any) => {
       //   providerAttr?.forEach((attr) => {
@@ -93,6 +93,8 @@ const Home: NextPage = () => {
       setFilteredProviders(results)
     }
   }
+
+  useEffect(() => console.log(providerAttr), [])
 
   return (
     <div className="min-h-screen flex flex-col justify-between">
