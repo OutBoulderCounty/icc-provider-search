@@ -17,9 +17,6 @@ const Home: NextPage = () => {
     null
   )
 
-  //Provider Attributes Array
-  const providerAttr = data ? Object.keys(data[0]).filter((attr) => attr.endsWith('name') || attr.endsWith('address') || attr.endsWith('focus') || attr.endsWith('phone') || attr.endsWith('accomodations') || attr.endsWith('support') || attr.endsWith('email')) : null
-    
   //Modal diplays provider information when clicked
   const displayModal = (provider: any) => {
     setIsModalOpen(true)
@@ -42,15 +39,7 @@ const Home: NextPage = () => {
     console.log({ target })
 
     if (data) {
-      // setFilteredProviders(
-      //   data.filter((provider) => {
-      //       return provider.providers__name
-      //         .toLowerCase()
-      //         .includes(target.value.toLowerCase())
-      //   })
-      // )
 
-      //match typed words to any of the attributes
       const results = data.filter((provider) => {
         if(provider.providers__name.toLowerCase().includes(target.value.toLowerCase())){
           return provider
@@ -80,21 +69,10 @@ const Home: NextPage = () => {
           return provider
         }
       })
-
-      // Provider Attributes Array
-      //  const providerAttr = data ? Object.keys(data) : null;
-      // const results = data.filter((provider: any) => {
-      //   providerAttr?.forEach((attr) => {
-      //     provider[attr]?.includes(target.value.toLowerCase())
-      //       return provider
-      //   })
-      // })
-
       setFilteredProviders(results)
     }
   }
 
-  useEffect(() => console.log(providerAttr), [])
 
   return (
     <div className="min-h-screen flex flex-col justify-between">
